@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkMFACompliance, checkRLSCompliance, checkPITRCompliance } from '../controllers/ComplianceController';
+import { checkMFACompliance, checkRLSCompliance, checkPITRCompliance, fixRLS } from '../controllers/ComplianceController';
 
 const router = express.Router();
 
@@ -11,5 +11,8 @@ router.get('/rls-check', checkRLSCompliance);
 
 // PITR compliance check endpoint
 router.get('/pitr-check', checkPITRCompliance);
+
+// Fix RLS endpoint
+router.post('/fix-rls', fixRLS);
 
 export default router;

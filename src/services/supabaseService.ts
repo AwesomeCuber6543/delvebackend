@@ -32,18 +32,14 @@ export class SupabaseService {
 
   async checkMFACompliance(): Promise<MFACheckResult> {
     try {
-      // Get all organizations
       const organizations = await this.getOrganizations();
       
-      // Initialize arrays to store passing and failing users
       const passingUsers: OrganizationMember[] = [];
       const failingUsers: OrganizationMember[] = [];
       
-      // Iterate through each organization
       for (const org of organizations) {
         const members = await this.getOrganizationMembers(org.id);
         
-        // Categorize members based on MFA status
         for (const member of members) {
           if (member.mfa_enabled) {
             passingUsers.push(member);
@@ -53,7 +49,6 @@ export class SupabaseService {
         }
       }
       
-      // Calculate summary statistics
       const totalUsers = passingUsers.length + failingUsers.length;
       const passingCount = passingUsers.length;
       const failingCount = failingUsers.length;
@@ -103,25 +98,20 @@ export class SupabaseService {
 
   async checkRLSCompliance(): Promise<RLSCheckResult> {
     try {
-      // Get all projects
       const projects = await this.getProjects();
       
-      // Initialize arrays to store passing and failing tables
       const passingTables: Table[] = [];
       const failingTables: Table[] = [];
       const projectDetails: ProjectTableInfo[] = [];
       
-      // Iterate through each project
       for (const project of projects) {
         const tables = await this.getProjectTables(project.id);
         
-        // Store project and its tables for detailed reporting
         projectDetails.push({
           project,
           tables
         });
         
-        // Categorize tables based on RLS status
         for (const table of tables) {
           if (table.rowsecurity) {
             passingTables.push(table);
@@ -131,7 +121,6 @@ export class SupabaseService {
         }
       }
       
-      // Calculate summary statistics
       const totalTables = passingTables.length + failingTables.length;
       const passingCount = passingTables.length;
       const failingCount = failingTables.length;
@@ -193,18 +182,14 @@ export class SupabaseService {
 
   async checkPITRCompliance(): Promise<PITRCheckResult> {
     try {
-      // Get all projects
       const projects = await this.getProjects();
       
-      // Initialize arrays to store passing and failing projects
       const passingProjects: ProjectBackupInfo[] = [];
       const failingProjects: ProjectBackupInfo[] = [];
       
-      // Iterate through each project
       for (const project of projects) {
         const backupInfo = await this.getProjectBackupInfo(project.id);
         
-        // Categorize projects based on PITR status
         if (backupInfo.pitr_enabled) {
           passingProjects.push(backupInfo);
         } else {
@@ -212,7 +197,6 @@ export class SupabaseService {
         }
       }
       
-      // Calculate summary statistics
       const totalProjects = passingProjects.length + failingProjects.length;
       const passingCount = passingProjects.length;
       const failingCount = failingProjects.length;
@@ -232,6 +216,35 @@ export class SupabaseService {
       };
     } catch (error) {
       console.error('Error checking PITR compliance:', error);
+      throw error;
+    }
+  }
+
+  async fixRLSForAllProjects(): Promise<{ success: boolean; message: string }> {
+    try {
+      const projects = await this.getProjects();
+      
+      let projectsProcessed = 0;
+      
+      for (const project of projects) {
+        try {
+          const client = supabaseApiClient(this.token);
+          await client.post(`/projects/${project.id}/database/query`, {
+            query: "DO $$ DECLARE table_rec RECORD; BEGIN FOR table_rec IN SELECT tablename FROM pg_tables WHERE schemaname = 'public' AND NOT rowsecurity LOOP EXECUTE FORMAT('ALTER TABLE public.%I ENABLE ROW LEVEL SECURITY;', table_rec.tablename); END LOOP; END; $$;"
+          });
+          
+          projectsProcessed++;
+        } catch (projectError) {
+          console.error(`Error fixing RLS for project ${project.id}:`, projectError);
+        }
+      }
+      
+      return {
+        success: true,
+        message: `Successfully processed ${projectsProcessed} out of ${projects.length} projects.`
+      };
+    } catch (error) {
+      console.error('Error fixing RLS for all projects:', error);
       throw error;
     }
   }

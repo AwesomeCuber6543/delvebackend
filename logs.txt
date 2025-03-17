@@ -558,3 +558,2025 @@
   }
 }
 
+{
+  "timestamp": "2025-03-17T08:47:42.663Z",
+  "checkType": "RLS_FIX",
+  "data": {
+    "action": "Enabled RLS on tables without it",
+    "result": {
+      "success": true,
+      "message": "Successfully processed 2 out of 2 projects."
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:49:25.923Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:49:27.234Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": []
+      }
+    ],
+    "summary": {
+      "totalTables": 4,
+      "passingCount": 4,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:49:28.635Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:50:35.697Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:50:35.824Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:50:37.051Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": false
+      }
+    ],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": false
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 4,
+      "failingCount": 1,
+      "percentageCompliant": 80
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:50:38.327Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": false
+      }
+    ],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": false
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 4,
+      "failingCount": 1,
+      "percentageCompliant": 80
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:50:38.391Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:50:39.803Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:04.353Z",
+  "checkType": "RLS_FIX",
+  "data": {
+    "action": "Enabled RLS on tables without it",
+    "result": {
+      "success": true,
+      "message": "Successfully processed 2 out of 2 projects."
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:07.286Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:10.673Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:10.815Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:11.977Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:13.232Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:13.320Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:51:15.749Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:26.026Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:27.319Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:28.677Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:49.745Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:49.877Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:51.083Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:52.497Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:52.560Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:53:53.921Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:56:19.829Z",
+  "checkType": "MFA",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "user_id": "463b5600-4211-46f5-a7de-820b8260fa66",
+        "user_name": "yahia.salman.04@gmail.com",
+        "email": "yahia.salman.04@gmail.com",
+        "role_name": "Owner",
+        "mfa_enabled": false
+      }
+    ],
+    "summary": {
+      "totalUsers": 1,
+      "passingCount": 0,
+      "failingCount": 1,
+      "percentageCompliant": 0
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:56:21.136Z",
+  "checkType": "RLS",
+  "data": {
+    "passing": [
+      {
+        "schemaname": "public",
+        "tablename": "test_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "secure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": true,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "restricted_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "insecure_table",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      },
+      {
+        "schemaname": "public",
+        "tablename": "your_table_name",
+        "tableowner": "postgres",
+        "tablespace": null,
+        "hasindexes": true,
+        "hasrules": false,
+        "hastriggers": false,
+        "rowsecurity": true
+      }
+    ],
+    "failing": [],
+    "projectDetails": [
+      {
+        "project": {
+          "id": "btghpnbtvkwhqqnejzqa",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test_project",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.btghpnbtvkwhqqnejzqa.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-16T20:44:32.073893Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "test_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "secure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": true,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "restricted_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          },
+          {
+            "schemaname": "public",
+            "tablename": "insecure_table",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      },
+      {
+        "project": {
+          "id": "zpyapdqqnmyhummtnxqu",
+          "organization_id": "evdkuafogitirbpykvrl",
+          "name": "test-pitr",
+          "region": "us-west-1",
+          "status": "ACTIVE_HEALTHY",
+          "database": {
+            "host": "db.zpyapdqqnmyhummtnxqu.supabase.co",
+            "version": "15.8.1.044",
+            "postgres_engine": "15",
+            "release_channel": "ga"
+          },
+          "created_at": "2025-03-17T08:03:59.574082Z"
+        },
+        "tables": [
+          {
+            "schemaname": "public",
+            "tablename": "your_table_name",
+            "tableowner": "postgres",
+            "tablespace": null,
+            "hasindexes": true,
+            "hasrules": false,
+            "hastriggers": false,
+            "rowsecurity": true
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalTables": 5,
+      "passingCount": 5,
+      "failingCount": 0,
+      "percentageCompliant": 100
+    }
+  }
+}
+
+{
+  "timestamp": "2025-03-17T08:56:22.714Z",
+  "checkType": "PITR",
+  "data": {
+    "passing": [],
+    "failing": [
+      {
+        "id": "btghpnbtvkwhqqnejzqa",
+        "name": "test_project",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      },
+      {
+        "id": "zpyapdqqnmyhummtnxqu",
+        "name": "test-pitr",
+        "region": "us-west-1",
+        "pitr_enabled": false,
+        "walg_enabled": false
+      }
+    ],
+    "summary": {
+      "totalProjects": 2,
+      "passingCount": 0,
+      "failingCount": 2,
+      "percentageCompliant": 0
+    }
+  }
+}
+
