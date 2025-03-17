@@ -150,13 +150,11 @@ export const fixRLS = async (req: Request, res: Response): Promise<void> => {
         details: error.response.data
       });
     } else if (error.request) {
-      // The request was made but no response was received
       res.status(503).json({
         error: 'No response from Supabase API',
         details: 'The service might be unavailable'
       });
     } else {
-      // Something happened in setting up the request that triggered an Error
       res.status(500).json({
         error: 'Internal server error',
         message: error.message
