@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { SupabaseService } from '../services/supabaseService';
+import { logToFile } from '../utils/logger';
 
 export const checkMFACompliance = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -18,6 +19,9 @@ export const checkMFACompliance = async (req: Request, res: Response): Promise<v
     
     // Perform the MFA compliance check
     const result = await supabaseService.checkMFACompliance();
+    
+    // Log the results to file
+    logToFile('MFA', result);
     
     // Return the results
     res.status(200).json(result);
@@ -66,6 +70,9 @@ export const checkRLSCompliance = async (req: Request, res: Response): Promise<v
     // Perform the RLS compliance check
     const result = await supabaseService.checkRLSCompliance();
     
+    // Log the results to file
+    logToFile('RLS', result);
+    
     // Return the results
     res.status(200).json(result);
   } catch (error: any) {
@@ -112,6 +119,9 @@ export const checkPITRCompliance = async (req: Request, res: Response): Promise<
     
     // Perform the PITR compliance check
     const result = await supabaseService.checkPITRCompliance();
+    
+    // Log the results to file
+    logToFile('PITR', result);
     
     // Return the results
     res.status(200).json(result);
